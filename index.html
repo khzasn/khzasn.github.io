@@ -29,8 +29,8 @@
   #cursorGlow { position: fixed; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%); pointer-events: none; z-index: 1; transform: translate(-50%,-50%); display: none; }
   @media (pointer: fine) { #cursorGlow { display: block; } }
 
-  #splash { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--bg); transition: opacity 2s ease, visibility 2s ease; padding: 24px; text-align: center; }
-  #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+  #splash { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--bg); transition: opacity 2s ease, visibility 2s ease, transform 2s ease; padding: 24px; text-align: center; transform: scale(1); }
+  #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(1.1); }
   .monogram { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--blue)); display: flex; align-items: center; justify-content: center; font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 1px; margin-bottom: 28px; animation: fadeUp 1s ease both; box-shadow: 0 0 40px rgba(124,58,237,0.4); }
   .splash-name { font-family: "Space Grotesk", sans-serif; font-weight: 300; font-style: normal; font-weight: 700; font-size: clamp(28px,5vw,44px); margin: 0 0 10px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeUp 1s ease 0.15s both; }
   .splash-sub { color: var(--ink-dim); font-size: 14px; max-width: 340px; line-height: 1.7; margin: 0 0 34px; animation: fadeUp 1s ease 0.3s both; }
