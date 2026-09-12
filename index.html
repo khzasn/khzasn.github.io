@@ -191,8 +191,10 @@
   <span class="splash-hint">Situs ini punya musik latar</span>
 </div>
 
-<!-- MUSIC PLAYER (hidden iframe, controlled via postMessage) -->
-<div id="ytHolder" style="position:fixed; width:0; height:0; overflow:hidden;"></div>
+<!-- MUSIC PLAYER — HTML5 Audio -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="Top 10 staTues tHat CriEd bloOd.mp3" type="audio/mpeg">
+</audio>
 
 <div id="musicWidget">
   <div class="bars"><span></span><span></span><span></span></div>
@@ -264,18 +266,13 @@
 </main>
 
 <script>
-  const splash = document.getElementById('splash');
-  const enterBtn = document.getElementById('enterBtn');
+  const splash      = document.getElementById('splash');
+  const enterBtn    = document.getElementById('enterBtn');
   const mainContent = document.getElementById('mainContent');
-  const ytHolder = document.getElementById('ytHolder');
   const musicWidget = document.getElementById('musicWidget');
-  const muteBtn = document.getElementById('muteBtn');
-  const musicLabel = document.getElementById('musicLabel');
-
-  // "Top 10 Statues That Cried Blood" - Bring Me The Horizon
-  const VIDEO_ID = 'OQgSf79lmQA';
-  let ytIframe = null;
-  let muted = false;
+  const muteBtn     = document.getElementById('muteBtn');
+  const musicLabel  = document.getElementById('musicLabel');
+  const bgMusic     = document.getElementById('bgMusic');
 
   enterBtn.addEventListener('click', () => {
     splash.classList.add('hide');
@@ -283,45 +280,37 @@
     mainContent.classList.add('reveal');
     musicWidget.classList.add('show');
 
-    // Buat iframe LANGSUNG di dalam click handler (user gesture context)
-    // Ini cara paling andal agar musik jalan di HP Android maupun iOS
-    if (!ytIframe) {
-      ytIframe = document.createElement('iframe');
-      ytIframe.width = '0';
-      ytIframe.height = '0';
-      ytIframe.style.position = 'absolute';
-      ytIframe.style.opacity = '0';
-      ytIframe.allow = 'autoplay; encrypted-media';
-      ytIframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&controls=0&mute=0&playsinline=1`;
-      ytHolder.appendChild(ytIframe);
-    }
+    // HTML5 audio.play() langsung di dalam click — dijamin jalan di HP
+    bgMusic.volume = 0.5;
+    bgMusic.play().catch(() => {
+      // Fallback: sembunyikan widget musik jika benar-benar diblokir
+      musicWidget.style.display = 'none';
+    });
   });
 
   muteBtn.addEventListener('click', () => {
-    if (!ytIframe) return;
-    if (muted) {
-      // Unmute: reload iframe tanpa mute
-      ytIframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&controls=0&mute=0&playsinline=1`;
+    if (bgMusic.muted) {
+      bgMusic.muted = false;
       musicLabel.textContent = 'Musik menyala';
+      muteBtn.textContent = '♪';
     } else {
-      // Mute: reload iframe dengan mute=1
-      ytIframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&controls=0&mute=1&playsinline=1`;
+      bgMusic.muted = true;
       musicLabel.textContent = 'Musik dibisukan';
+      muteBtn.textContent = '♪';
     }
-    muted = !muted;
   });
 
   /* 3D tilt effect — hanya desktop */
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      const x = e.clientX - r.left;
-      const y = e.clientY - r.top;
-      const cx = r.width / 2;
-      const cy = r.height / 2;
+      const r   = card.getBoundingClientRect();
+      const x   = e.clientX - r.left;
+      const y   = e.clientY - r.top;
+      const cx  = r.width  / 2;
+      const cy  = r.height / 2;
       const rotX = ((y - cy) / cy) * -7;
-      const rotY = ((x - cx) / cx) * 7;
+      const rotY = ((x - cx) / cx) *  7;
       card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(4px)`;
     });
     card.addEventListener('mouseleave', () => {
