@@ -7,8 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- YouTube IFrame API dimuat lebih awal agar siap sebelum user klik -->
-<script src="https://www.youtube.com/iframe_api"></script>
+
 <style>
   :root{
     --bg: #0a0a09;
@@ -275,28 +274,8 @@
 
   // "Top 10 Statues That Cried Blood" - Bring Me The Horizon
   const VIDEO_ID = 'OQgSf79lmQA';
-  let player = null;
-  let playerReady = false;
-  let pendingPlay = false;
+  let ytIframe = null;
   let muted = false;
-
-  // YouTube API dimuat di <head>, tapi player dibuat di sini (tanpa autoplay)
-  window.onYouTubeIframeAPIReady = function(){
-    player = new YT.Player(ytHolder, {
-      height: '0', width: '0', videoId: VIDEO_ID,
-      playerVars: { autoplay: 0, loop: 1, playlist: VIDEO_ID, controls: 0 },
-      events: {
-        'onReady': function(e) {
-          playerReady = true;
-          // Jika user sudah klik "Masuk" sebelum player siap, mainkan sekarang
-          if (pendingPlay) {
-            e.target.playVideo();
-            pendingPlay = false;
-          }
-        }
-      }
-    });
-  };
 
   enterBtn.addEventListener('click', () => {
     splash.classList.add('hide');
@@ -304,23 +283,29 @@
     mainContent.classList.add('reveal');
     musicWidget.classList.add('show');
 
-    // Panggil playVideo() langsung di dalam event klik (user gesture context)
-    // Ini KUNCI agar mobile tidak memblokir audio
-    if (playerReady && player) {
-      player.playVideo();
-    } else {
-      // Player belum siap — tandai agar diputar segera setelah siap
-      pendingPlay = true;
+    // Buat iframe LANGSUNG di dalam click handler (user gesture context)
+    // Ini cara paling andal agar musik jalan di HP Android maupun iOS
+    if (!ytIframe) {
+      ytIframe = document.createElement('iframe');
+      ytIframe.width = '0';
+      ytIframe.height = '0';
+      ytIframe.style.position = 'absolute';
+      ytIframe.style.opacity = '0';
+      ytIframe.allow = 'autoplay; encrypted-media';
+      ytIframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&controls=0&mute=0&playsinline=1`;
+      ytHolder.appendChild(ytIframe);
     }
   });
 
   muteBtn.addEventListener('click', () => {
-    if (!player) return;
-    if (muted){
-      player.unMute();
+    if (!ytIframe) return;
+    if (muted) {
+      // Unmute: reload iframe tanpa mute
+      ytIframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&controls=0&mute=0&playsinline=1`;
       musicLabel.textContent = 'Musik menyala';
     } else {
-      player.mute();
+      // Mute: reload iframe dengan mute=1
+      ytIframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&controls=0&mute=1&playsinline=1`;
       musicLabel.textContent = 'Musik dibisukan';
     }
     muted = !muted;
