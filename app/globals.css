@@ -9,6 +9,10 @@
   --accent: #0066ff; /* Electric Blue like the reference */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text-main);

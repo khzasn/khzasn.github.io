@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import { useState, useRef } from "react";
 
 export default function Home() {
   const [entered, setEntered] = useState(false);
@@ -12,13 +11,10 @@ export default function Home() {
 
   const handleEnter = () => {
     setEntered(true);
-    
-    // Play audio
     if (audioRef.current) {
       audioRef.current.volume = 0.45;
       audioRef.current.play().catch(e => console.log("Audio play failed:", e));
     }
-    
     setTimeout(() => {
       setHideSplash(true);
     }, 2000);
@@ -70,21 +66,20 @@ export default function Home() {
         </div>
         <div className="hidden md:flex gap-8 text-sm font-medium text-[var(--text-muted)]">
           <a href="#" className="text-white hover:text-[var(--accent)] transition-colors">Home</a>
-          <a href="#" className="hover:text-[var(--accent)] transition-colors">About</a>
-          <a href="#" className="hover:text-[var(--accent)] transition-colors">Portfolio</a>
-          <a href="#" className="hover:text-[var(--accent)] transition-colors">Contact</a>
+          <a href="#about" className="hover:text-[var(--accent)] transition-colors">About</a>
+          <a href="#portfolio" className="hover:text-[var(--accent)] transition-colors">Portfolio</a>
+          <a href="https://github.com/khzasn" target="_blank" rel="noreferrer" className="hover:text-[var(--accent)] transition-colors">Contact</a>
         </div>
-        {/* Mobile Menu Icon */}
         <div className="md:hidden flex flex-col gap-1.5 cursor-pointer">
           <span className="w-6 h-0.5 bg-white"></span>
           <span className="w-6 h-0.5 bg-white"></span>
         </div>
       </nav>
 
-      {/* MAIN LAYOUT */}
-      <main className={`relative max-w-[1400px] mx-auto min-h-screen px-6 lg:px-12 pt-24 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-6 items-center transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+      {/* HERO SECTION */}
+      <header className={`relative max-w-[1400px] mx-auto min-h-screen px-6 lg:px-12 pt-24 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-6 items-center transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         
-        {/* LEFT COLUMN - HERO TEXT */}
+        {/* LEFT COLUMN */}
         <div className="lg:col-span-1 z-20 flex flex-col items-start mt-10 lg:mt-0">
           <div className="w-16 h-1.5 bg-white mb-8 animate-fade-up" style={{ animationDelay: '0.4s' }}></div>
           <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-bold mb-6 leading-[1.1] font-[family-name:var(--font-space-grotesk)] animate-fade-up" style={{ animationDelay: '0.5s' }}>
@@ -93,37 +88,32 @@ export default function Home() {
           <p className="text-[var(--text-muted)] text-[15px] leading-relaxed mb-10 max-w-sm animate-fade-up" style={{ animationDelay: '0.6s' }}>
             Mahasiswa Sistem Informasi yang mengeksplorasi pengembangan web, desain UI/UX, dan analisis sistem untuk menciptakan solusi digital terbaik.
           </p>
-          <button className="w-14 h-14 bg-[var(--accent)] text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors animate-fade-up group" style={{ animationDelay: '0.7s' }}>
+          <a href="#portfolio" className="w-14 h-14 bg-[var(--accent)] text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors animate-fade-up group" style={{ animationDelay: '0.7s' }}>
             <svg className="w-6 h-6 transition-transform group-hover:translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
-          </button>
+          </a>
         </div>
 
         {/* CENTER COLUMN - PHOTO */}
-        {/* On desktop: absolute centered to overlap beautifully. On mobile: relative block */}
         <div className="lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 w-full lg:w-[45%] h-[50vh] lg:h-[85vh] z-10 flex items-end justify-center animate-fade-up" style={{ animationDelay: '0.6s' }}>
-          {/* FOTO PLACEHOLDER - Nanti diganti dengan tag <img> asli */}
           <div className="w-full max-w-[400px] h-full rounded-t-[200px] photo-placeholder flex flex-col items-center justify-end pb-12 lg:pb-24 px-6 text-center border-t border-x border-[#2a2a2a]">
             <svg className="w-12 h-12 text-[#333] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
             <p className="text-[#555] text-xs font-bold tracking-widest uppercase mb-2">Area Foto Utama</p>
-            <p className="text-[#444] text-[11px]">Upload foto tanpa background (PNG) dengan nama <span className="text-[var(--accent)] font-mono">foto.png</span> ke folder public, lalu hubungi saya untuk memasangnya.</p>
+            <p className="text-[#444] text-[11px]">Upload foto tanpa background (PNG) dengan nama <span className="text-[var(--accent)] font-mono">foto.png</span> ke folder public.</p>
           </div>
-          {/* CONTOH CARA PASANG FOTO NANTI: */}
-          {/* <img src="/foto.png" alt="Khozin" className="object-contain object-bottom w-full h-full" /> */}
         </div>
 
-        {/* RIGHT COLUMN - INFO */}
+        {/* RIGHT COLUMN */}
         <div className="lg:col-span-1 z-20 flex flex-col gap-12 lg:ml-auto max-w-sm mt-8 lg:mt-0">
-          
-          <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
+          <div id="about" className="animate-fade-up scroll-mt-24" style={{ animationDelay: '0.8s' }}>
             <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-4 text-white">About Me</h3>
             <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-4">
               Berfokus membangun antarmuka pengguna yang fungsional dan memiliki estetika tinggi. Masih penasaran dengan banyak hal — kode, desain, dan konten.
             </p>
-            <a href="#" className="text-sm font-bold flex items-center gap-2 text-white hover:text-[var(--accent)] transition-colors group w-fit">
+            <a href="https://www.linkedin.com/in/khozin-sapzidan-aabb81303" target="_blank" rel="noreferrer" className="text-sm font-bold flex items-center gap-2 text-white hover:text-[var(--accent)] transition-colors group w-fit">
               LEARN MORE 
               <span className="transition-transform group-hover:translate-x-1">➔</span>
             </a>
@@ -132,9 +122,9 @@ export default function Home() {
           <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
             <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-4 text-white">My Work</h3>
             <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-4">
-              Kumpulan proyek pengembangan sistem manajemen, prototipe aplikasi mobile, dan eksplorasi teknologi modern.
+              Kumpulan proyek pengembangan web, desain UI/UX, dan eksplorasi teknologi modern yang saya buat.
             </p>
-            <a href="#" className="text-sm font-bold flex items-center gap-2 text-white hover:text-[var(--accent)] transition-colors group w-fit">
+            <a href="#portfolio" className="text-sm font-bold flex items-center gap-2 text-white hover:text-[var(--accent)] transition-colors group w-fit">
               BROWSE PORTFOLIO 
               <span className="transition-transform group-hover:translate-x-1">➔</span>
             </a>
@@ -157,9 +147,86 @@ export default function Home() {
               </a>
             </div>
           </div>
-
         </div>
-      </main>
+      </header>
+
+      {/* PORTFOLIO / PROJECTS SECTION */}
+      <section id="portfolio" className={`w-full bg-[#0d0d0d] py-24 border-t border-[#1a1a1a] transition-all duration-1000 delay-300 scroll-mt-0 ${entered ? "opacity-100" : "opacity-0"}`}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          
+          <div className="flex flex-col items-center mb-16 text-center">
+            <div className="w-12 h-1 bg-[var(--accent)] mb-6"></div>
+            <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4">
+              Featured Projects
+            </h2>
+            <p className="text-[var(--text-muted)] max-w-2xl text-[15px]">
+              Karya terpilih dari eksplorasi saya di bidang web development dan desain antarmuka.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Project 1 */}
+            <div className="group rounded-2xl bg-[var(--surface)] border border-[var(--border)] overflow-hidden hover:border-[var(--accent)] transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[var(--accent)]/10">
+              <div className="h-56 bg-[#222] relative overflow-hidden flex items-center justify-center border-b border-[var(--border)] group-hover:bg-[#2a2a2a] transition-colors">
+                <span className="text-[#555] text-sm tracking-widest font-bold">GAMBAR PROJECT 1</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-3 font-[family-name:var(--font-space-grotesk)] group-hover:text-[var(--accent)] transition-colors">Sistem Informasi Akademik</h3>
+                <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">
+                  Aplikasi berbasis web untuk manajemen data mahasiswa, dosen, dan penjadwalan perkuliahan secara terintegrasi dan efisien.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">PHP</span>
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">MySQL</span>
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">Bootstrap</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="group rounded-2xl bg-[var(--surface)] border border-[var(--border)] overflow-hidden hover:border-[var(--accent)] transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[var(--accent)]/10">
+              <div className="h-56 bg-[#222] relative overflow-hidden flex items-center justify-center border-b border-[var(--border)] group-hover:bg-[#2a2a2a] transition-colors">
+                <span className="text-[#555] text-sm tracking-widest font-bold">GAMBAR PROJECT 2</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-3 font-[family-name:var(--font-space-grotesk)] group-hover:text-[var(--accent)] transition-colors">E-Commerce UI/UX Design</h3>
+                <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">
+                  Prototipe desain antarmuka aplikasi mobile untuk toko online, berfokus pada kemudahan navigasi dan pengalaman pengguna yang modern.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">Figma</span>
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">Prototyping</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="group rounded-2xl bg-[var(--surface)] border border-[var(--border)] overflow-hidden hover:border-[var(--accent)] transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[var(--accent)]/10">
+              <div className="h-56 bg-[#222] relative overflow-hidden flex items-center justify-center border-b border-[var(--border)] group-hover:bg-[#2a2a2a] transition-colors">
+                <span className="text-[#555] text-sm tracking-widest font-bold">GAMBAR PROJECT 3</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-3 font-[family-name:var(--font-space-grotesk)] group-hover:text-[var(--accent)] transition-colors">Modern Portfolio Website</h3>
+                <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">
+                  Pengembangan website portofolio interaktif yang sangat responsif, dilengkapi animasi mulus dan pemutar musik terintegrasi.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">Next.js</span>
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">React</span>
+                  <span className="text-xs font-semibold text-[var(--accent)] bg-blue-900/20 border border-[var(--accent)]/20 px-3 py-1.5 rounded-full">Tailwind CSS</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="w-full bg-[#080808] border-t border-[#1a1a1a] py-8 text-center text-[#666] text-sm">
+        <p>&copy; 2026 Khozin Sapzidan. Built with Next.js & Tailwind CSS.</p>
+      </footer>
 
       {/* MUSIC WIDGET */}
       <div 
