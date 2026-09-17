@@ -88,22 +88,72 @@ export default function Home() {
 
       {/* ── SPLASH ── */}
       {!hideSplash && (
-        <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--bg)] px-6 text-center transition-all duration-[2000ms] ease-in-out ${entered ? "opacity-0 invisible scale-110 pointer-events-none" : "opacity-100 scale-100"}`}>
-          <div className="text-[var(--accent)] font-bold text-4xl mb-4 animate-fade-up">&lt;/&gt;</div>
-          <h2 className="text-3xl font-bold mb-2 font-[family-name:var(--font-space-grotesk)] animate-fade-up" style={{ animationDelay: '0.1s' }}>Khozin Sapzidan</h2>
-          <p className="text-[var(--text-muted)] text-sm max-w-[340px] mb-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            Portofolio interaktif dengan musik latar. Klik untuk melanjutkan.
+        <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--bg)] px-6 text-center transition-all duration-[2000ms] ease-in-out overflow-hidden ${entered ? "opacity-0 invisible scale-110 pointer-events-none" : "opacity-100 scale-100"}`}>
+          {/* Background glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full filter blur-[120px] pointer-events-none"></div>
+
+          {/* Logo */}
+          <div className="animate-fade-up mb-5 relative z-10" style={{ animationDelay: '0s' }}>
+            <Image
+              src="/logo.png"
+              alt="Logo khzasn"
+              width={88}
+              height={88}
+              className="object-contain drop-shadow-[0_0_24px_rgba(0,102,255,0.7)]"
+              style={{ mixBlendMode: 'screen' }}
+            />
+          </div>
+
+          {/* Wave + Greeting */}
+          <div className="relative z-10 animate-fade-up mb-1" style={{ animationDelay: '0.15s' }}>
+            <span className="text-3xl inline-block" style={{ animation: 'waveHand 1.5s ease-in-out 0.6s 3' }}>👋</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-space-grotesk)] text-white relative z-10 animate-fade-up mb-2" style={{ animationDelay: '0.2s' }}>
+            Hey, Selamat Datang!
+          </h2>
+
+          {/* Name accent */}
+          <p className="text-[var(--accent)] font-semibold text-sm mb-5 animate-fade-up tracking-widest uppercase relative z-10" style={{ animationDelay: '0.3s' }}>
+            — Khozin Sapzidan —
           </p>
-          <button onClick={handleEnter} className="bg-[var(--accent)] text-white font-semibold text-sm rounded-full px-8 py-3 cursor-pointer transition-all hover:bg-blue-600 hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,102,255,0.4)] animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            Masuk
+
+          {/* Subtitle */}
+          <p className="text-[var(--text-muted)] text-sm max-w-[360px] mb-10 leading-relaxed animate-fade-up relative z-10" style={{ animationDelay: '0.4s' }}>
+            Ini adalah ruang digital saya — tempat kode, desain, dan ide bertemu. Siap untuk menjelajah?
+          </p>
+
+          {/* Start Button */}
+          <button
+            onClick={handleEnter}
+            className="group relative z-10 bg-[var(--accent)] text-white font-bold text-sm rounded-full px-10 py-3.5 cursor-pointer transition-all hover:bg-blue-600 hover:-translate-y-1 shadow-[0_0_30px_rgba(0,102,255,0.5)] animate-fade-up overflow-hidden"
+            style={{ animationDelay: '0.5s' }}
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              Start
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></span>
           </button>
+
+          <p className="text-white/20 text-xs mt-6 animate-fade-up relative z-10" style={{ animationDelay: '0.6s' }}>
+            🎵 Musik akan otomatis diputar
+          </p>
         </div>
       )}
 
       {/* ── NAVBAR ── */}
       <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-14 py-4 backdrop-blur-md bg-black/25 border-b border-white/8 transition-all duration-1000 delay-300 ${entered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}>
-        <div className="font-bold text-lg flex items-center gap-2 font-[family-name:var(--font-space-grotesk)] shrink-0">
-          <span className="text-[var(--accent)]">&lt;/&gt;</span>
+        <div className="font-bold text-lg flex items-center gap-2.5 font-[family-name:var(--font-space-grotesk)] shrink-0">
+          <Image
+            src="/logo.png"
+            alt="Logo khzasn"
+            width={36}
+            height={36}
+            className="object-contain"
+            style={{ mixBlendMode: 'screen' }}
+          />
           <span className="text-white tracking-wide">Khozin X</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-muted)]">
