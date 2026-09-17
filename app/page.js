@@ -179,12 +179,12 @@ export default function Home() {
       <section className={`relative z-20 w-full min-h-screen flex flex-col lg:flex-row items-stretch pt-20 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         
         {/* LEFT */}
-        <div className="flex-1 flex flex-col justify-center px-8 lg:pl-12 lg:pr-4 py-16 lg:py-0 lg:max-w-[55%] relative z-20">
+        <div className="flex-1 flex flex-col justify-center px-8 lg:pl-12 lg:pr-0 py-16 lg:py-0 lg:max-w-[65%] lg:-mr-32 relative z-30">
           <div className="w-14 h-1 bg-[var(--accent)] mb-7 rounded-full shadow-[0_0_12px_rgba(0,102,255,0.7)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
-          <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-bold mb-5 leading-[1.15] font-[family-name:var(--font-space-grotesk)] animate-fade-up drop-shadow-2xl" style={{ animationDelay: '0.4s' }}>
+          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold mb-5 leading-[1.15] font-[family-name:var(--font-space-grotesk)] animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
             I'm Khozin Sapzidan, a student at Unja Information Systems.
           </h1>
-          <p className="text-gray-300 text-[15px] md:text-base leading-relaxed mb-10 max-w-[600px] animate-fade-up drop-shadow-lg backdrop-blur-sm bg-black/10 p-3 -ml-3 rounded-xl" style={{ animationDelay: '0.5s' }}>
+          <p className="text-gray-200 text-[15px] md:text-base leading-relaxed mb-10 max-w-[650px] animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)] backdrop-blur-sm bg-black/10 p-3 -ml-3 rounded-xl" style={{ animationDelay: '0.5s' }}>
             <span className="text-[var(--accent)] font-semibold">Not a pro yet.</span> I still spend plenty of time just playing around and having fun, but I'm also keeping an eye on the future. Right now, I'm exploring different tech skills to see what's actually worth pursuing seriously.
           </p>
           <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
