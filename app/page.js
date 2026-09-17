@@ -34,7 +34,7 @@ const projects = [
     lang: "TypeScript",
     tags: ["TypeScript", "Node.js", "Workflow"],
     github: "https://github.com/khzasn/Personal-Workflow",
-    live: null,
+    live: "https://personal-workflow-w8iq.vercel.app/",
     color: "from-purple-600/20 to-violet-900/20",
     icon: "⚡",
   },
@@ -119,7 +119,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="text-[var(--text-muted)] text-sm max-w-[360px] mb-10 leading-relaxed animate-fade-up relative z-10" style={{ animationDelay: '0.4s' }}>
-            Ini adalah ruang digital saya — tempat kode, desain, dan ide bertemu. Siap untuk menjelajah?
+            Nggak ada yang spesial di sini. Cuma jejak digital seseorang yang lagi belajar pelan-pelan — dan tetap menikmati prosesnya.
           </p>
 
           {/* Start Button */}
@@ -182,10 +182,10 @@ export default function Home() {
         <div className="flex-1 flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-0 lg:max-w-[42%]">
           <div className="w-14 h-1 bg-[var(--accent)] mb-7 rounded-full shadow-[0_0_12px_rgba(0,102,255,0.7)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-5 leading-[1.05] font-[family-name:var(--font-space-grotesk)] animate-fade-up drop-shadow-2xl" style={{ animationDelay: '0.4s' }}>
-            I'm Khozin,<br />a Web<br />Developer
+            Khozin<br />Sapzidan.
           </h1>
           <p className="text-gray-400 text-base leading-relaxed mb-10 max-w-md animate-fade-up" style={{ animationDelay: '0.5s' }}>
-            Mahasiswa Sistem Informasi yang mengeksplorasi pengembangan web, desain UI/UX, dan analisis sistem untuk menciptakan solusi digital terbaik.
+            Bukan yang paling jago, tapi selalu penasaran. Masih suka buang waktu buat hal random — tapi juga lagi nyiapin diri buat hal yang lebih besar. Sekarang? Lagi explore skill yang worth it.
           </p>
           <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
             <a href="#portfolio" className="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-semibold text-sm rounded-full px-7 py-3.5 hover:bg-blue-600 transition-all hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,102,255,0.4)]">
@@ -258,6 +258,7 @@ export default function Home() {
             <div className="flex gap-3">
               {[
                 { url: "https://github.com/khzasn", d: "M12 .5C5.73.5.5 5.74.5 12.02c0 5.02 3.29 9.27 7.86 10.77.57.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.8 1.19 1.83 1.19 3.09 0 4.44-2.7 5.42-5.27 5.7.42.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5Z" },
+                { url: "https://www.instagram.com/khzasn?stkn=NDVwbHp5ZTBtankw", d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
                 { url: "https://www.linkedin.com/in/khozin-sapzidan-aabb81303", d: "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z" },
                 { url: "https://tiktok.com/@khzasn", d: "M16.6 5.82c-1-.87-1.6-2.1-1.66-3.44h-3.34v13.5a2.72 2.72 0 1 1-1.93-2.6V9.9a6.1 6.1 0 1 0 5.27 6.04V9.7a8.3 8.3 0 0 0 4.9 1.58V8.03c-1.06 0-2.24-.4-3.24-1.14v-1.07Z" },
                 { url: "https://music.youtube.com/@khozinsapzidan7580", d: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18.2A8.2 8.2 0 1 1 20.2 12 8.2 8.2 0 0 1 12 20.2ZM9.6 7.5v9l7-4.5-7-4.5Z" },
