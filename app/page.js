@@ -179,13 +179,13 @@ export default function Home() {
       <section className={`relative z-20 w-full min-h-screen flex flex-col lg:flex-row items-stretch pt-20 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         
         {/* LEFT */}
-        <div className="flex-1 flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-0 lg:max-w-[42%]">
+        <div className="flex-1 flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-0 lg:max-w-[48%] relative z-20">
           <div className="w-14 h-1 bg-[var(--accent)] mb-7 rounded-full shadow-[0_0_12px_rgba(0,102,255,0.7)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-5 leading-[1.05] font-[family-name:var(--font-space-grotesk)] animate-fade-up drop-shadow-2xl" style={{ animationDelay: '0.4s' }}>
-            Khozin<br />Sapzidan.
+          <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-bold mb-5 leading-[1.1] font-[family-name:var(--font-space-grotesk)] animate-fade-up drop-shadow-2xl" style={{ animationDelay: '0.4s' }}>
+            I'm Khozin Sapzidan,<br />a student at Unja<br />Information Systems.
           </h1>
-          <p className="text-gray-400 text-[15px] leading-relaxed mb-10 max-w-[420px] animate-fade-up" style={{ animationDelay: '0.5s' }}>
-            <span className="text-[var(--accent)] font-semibold">Not a professional.</span> Masih suka ngabisin waktu buat main, tapi tetap mempersiapkan diri buat masa depan. Sekarang lagi ngeksplor skill-skill yang cocok buat ditekuni.
+          <p className="text-gray-300 text-[15px] leading-relaxed mb-10 max-w-[500px] animate-fade-up drop-shadow-lg backdrop-blur-sm bg-black/10 p-2 -ml-2 rounded-xl" style={{ animationDelay: '0.5s' }}>
+            <span className="text-[var(--accent)] font-semibold">Not a pro yet.</span> I still spend plenty of time just playing around and having fun, but I'm also keeping an eye on the future. Right now, I'm exploring different tech skills to see what's actually worth pursuing seriously.
           </p>
           <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
             <a href="#portfolio" className="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-semibold text-sm rounded-full px-7 py-3.5 hover:bg-blue-600 transition-all hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,102,255,0.4)]">
