@@ -199,27 +199,31 @@ export default function Home() {
         </div>
 
         {/* CENTER — Foto dengan CSS blend agar menyatu dengan background */}
-        <div className="relative flex items-end justify-center lg:flex-1 h-[70vw] max-h-[650px] lg:h-auto overflow-hidden animate-fade-up" style={{ animationDelay: '0.5s' }}>
+        <div className="relative flex items-end justify-center lg:flex-1 h-[70vw] max-h-[650px] lg:h-auto overflow-hidden animate-fade-up z-10" style={{ animationDelay: '0.5s' }}>
           {/* Glow biru di bawah */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-40 bg-blue-600/20 rounded-full filter blur-3xl pointer-events-none z-0"></div>
-          <div
-            className="relative z-10 h-full w-auto"
-            style={{
-              mixBlendMode: 'screen',
-              maskImage: 'linear-gradient(to bottom, black 55%, transparent 100%), linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-              maskComposite: 'intersect',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 55%, transparent 100%), linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-              WebkitMaskComposite: 'source-in',
-            }}
-          >
-            <Image
-              src="/foto.png"
-              alt="Foto Khozin Sapzidan"
-              width={520}
-              height={680}
-              className="object-contain object-bottom h-full w-auto"
-              priority
-            />
+          
+          <div className="relative z-10 h-full w-auto" style={{ mixBlendMode: 'screen' }}>
+            {/* Fade Kiri & Kanan (Horizontal) */}
+            <div className="h-full w-full" style={{
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%)',
+              maskImage: 'linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%)'
+            }}>
+              {/* Fade Bawah (Vertical) */}
+              <div className="h-full w-full" style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)'
+              }}>
+                <Image
+                  src="/foto.png"
+                  alt="Foto Khozin Sapzidan"
+                  width={520}
+                  height={680}
+                  className="object-contain object-bottom h-full w-auto"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
 
