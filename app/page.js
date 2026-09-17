@@ -119,7 +119,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="text-[var(--text-muted)] text-sm max-w-[360px] mb-10 leading-relaxed animate-fade-up relative z-10" style={{ animationDelay: '0.4s' }}>
-            Nggak ada yang spesial di sini. Cuma jejak digital seseorang yang lagi belajar pelan-pelan — dan tetap menikmati prosesnya.
+            Nggak ada yang spesial di sini, cuma hasil gabut dari orang yang lagi belajar buat jadi lebih baik.
           </p>
 
           {/* Start Button */}
@@ -184,8 +184,8 @@ export default function Home() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-5 leading-[1.05] font-[family-name:var(--font-space-grotesk)] animate-fade-up drop-shadow-2xl" style={{ animationDelay: '0.4s' }}>
             Khozin<br />Sapzidan.
           </h1>
-          <p className="text-gray-400 text-base leading-relaxed mb-10 max-w-md animate-fade-up" style={{ animationDelay: '0.5s' }}>
-            Bukan yang paling jago, tapi selalu penasaran. Masih suka buang waktu buat hal random — tapi juga lagi nyiapin diri buat hal yang lebih besar. Sekarang? Lagi explore skill yang worth it.
+          <p className="text-gray-400 text-[15px] leading-relaxed mb-10 max-w-[420px] animate-fade-up" style={{ animationDelay: '0.5s' }}>
+            <span className="text-[var(--accent)] font-semibold">Not a professional.</span> Masih suka ngabisin waktu buat main, tapi tetap mempersiapkan diri buat masa depan. Sekarang lagi ngeksplor skill-skill yang cocok buat ditekuni.
           </p>
           <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
             <a href="#portfolio" className="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-semibold text-sm rounded-full px-7 py-3.5 hover:bg-blue-600 transition-all hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,102,255,0.4)]">
