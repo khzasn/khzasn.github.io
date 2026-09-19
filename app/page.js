@@ -199,20 +199,21 @@ export default function Home() {
         </div>
 
         {/* CENTER — Foto (True Transparent PNG) */}
-        <div className="relative flex items-end justify-center lg:flex-1 h-[70vw] max-h-[650px] lg:h-auto animate-fade-up z-10" style={{ animationDelay: '0.5s' }}>
+        <div className="relative flex items-end justify-center lg:flex-1 min-h-screen animate-fade-up z-10 pointer-events-none overflow-visible" style={{ animationDelay: '0.5s' }}>
           {/* Glow biru di bawah */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-40 bg-blue-600/20 rounded-full filter blur-3xl pointer-events-none z-0"></div>
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-56 bg-blue-600/25 rounded-full filter blur-3xl z-0"></div>
           
-          <div className="relative z-10 h-full w-auto" style={{
+          {/* Foto container */}
+          <div className="relative z-10 w-full h-full flex items-end justify-center" style={{
             WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
             maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)'
           }}>
             <Image
               src="/foto.png"
               alt="Foto Khozin Sapzidan"
-              width={520}
-              height={680}
-              className="object-contain object-bottom h-full w-auto drop-shadow-2xl"
+              width={700}
+              height={900}
+              className="object-contain object-bottom w-full h-full max-h-[90vh]"
               priority
             />
           </div>
