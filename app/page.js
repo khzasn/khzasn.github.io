@@ -179,16 +179,14 @@ export default function Home() {
       <section className={`relative z-20 w-full min-h-screen flex flex-col lg:flex-row justify-between items-center px-8 lg:px-12 2xl:px-24 pt-24 pb-12 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         
         {/* LEFT COLUMN */}
-        <div className="relative z-30 flex flex-col w-full lg:w-[50%] xl:w-[45%] mt-4 lg:mt-0">
+        <div className="relative z-30 flex flex-col w-full lg:w-[40%] xl:w-[35%] lg:max-w-[500px] mt-4 lg:mt-0">
           <div className="w-16 h-1 bg-white mb-6 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.5)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.3rem] 2xl:text-[3.5rem] font-bold mb-4 leading-[1.1] font-[family-name:var(--font-space-grotesk)] text-white animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
-            <span className="whitespace-nowrap">I'm Khozin Sapzidan,</span><br/>
-            a student at Unja<br/>
-            Information Systems.
+          <h1 className="text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.3rem] 2xl:text-[3.5rem] font-bold mb-4 leading-[1.15] font-[family-name:var(--font-space-grotesk)] text-white animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
+            I'm Khozin Sapzidan, a student at Unja Information Systems.
           </h1>
           
-          <p className="text-gray-300 text-sm md:text-[15px] leading-relaxed mb-8 max-w-[480px] animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.5s' }}>
+          <p className="text-gray-300 text-sm md:text-[15px] leading-relaxed mb-8 animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.5s' }}>
             <span className="font-semibold text-white">Not a pro yet.</span> I still spend plenty of time just playing around and having fun, but I'm also keeping an eye on the future. Right now, I'm exploring different tech skills to see what's actually worth pursuing seriously.
           </p>
           
