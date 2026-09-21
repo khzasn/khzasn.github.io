@@ -176,37 +176,37 @@ export default function Home() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className={`relative z-20 w-full min-h-screen flex flex-col lg:flex-row justify-between items-center px-8 lg:px-12 2xl:px-24 pt-32 pb-20 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+      <section className={`relative z-20 w-full min-h-screen flex flex-col lg:flex-row justify-between items-center px-8 lg:px-12 2xl:px-24 pt-24 pb-12 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         
         {/* LEFT COLUMN */}
-        <div className="relative z-30 flex flex-col w-full lg:w-[45%] xl:w-[40%] mt-8 lg:mt-0">
-          <div className="w-20 h-1 bg-white mb-10 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.5)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
+        <div className="relative z-30 flex flex-col w-full lg:w-[45%] xl:w-[40%] mt-4 lg:mt-0">
+          <div className="w-16 h-1 bg-white mb-6 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.5)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold mb-6 leading-[1.05] font-[family-name:var(--font-space-grotesk)] text-white animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
+          <h1 className="text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.5rem] font-bold mb-4 leading-[1.1] font-[family-name:var(--font-space-grotesk)] text-white animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
             I'm Khozin Sapzidan, a student at Unja Information Systems.
           </h1>
           
-          <p className="text-gray-300 text-[15px] md:text-lg leading-relaxed mb-12 max-w-[500px] animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.5s' }}>
+          <p className="text-gray-300 text-sm md:text-[15px] leading-relaxed mb-8 max-w-[480px] animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.5s' }}>
             <span className="font-semibold text-white">Not a pro yet.</span> I still spend plenty of time just playing around and having fun, but I'm also keeping an eye on the future. Right now, I'm exploring different tech skills to see what's actually worth pursuing seriously.
           </p>
           
           <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
-            <a href="#portfolio" className="inline-flex items-center justify-center w-16 h-16 bg-[#0066ff] text-white rounded-full hover:bg-blue-600 transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,102,255,0.4)]">
-              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            <a href="#portfolio" className="inline-flex items-center justify-center w-14 h-14 bg-[#0066ff] text-white rounded-full hover:bg-blue-600 transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,102,255,0.4)]">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </a>
           </div>
         </div>
 
         {/* CENTER PHOTO (ABSOLUTE) */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] lg:max-w-[700px] xl:max-w-[850px] h-[60vh] lg:h-[90vh] pointer-events-none z-20 flex items-end justify-center animate-fade-up" style={{ animationDelay: '0.5s' }}>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] lg:max-w-[700px] xl:max-w-[800px] h-[60vh] lg:h-[80vh] pointer-events-none z-20 flex items-end justify-center animate-fade-up" style={{ animationDelay: '0.5s' }}>
           {/* Glow effect di belakang foto */}
           <div className="absolute bottom-10 w-[70%] h-[50%] bg-blue-600/20 rounded-full filter blur-[80px] z-0"></div>
           
           <Image
             src="/foto.png"
             alt="Foto Khozin Sapzidan"
-            width={850}
-            height={1100}
+            width={800}
+            height={1000}
             className="object-contain object-bottom w-full h-full drop-shadow-[0_0_30px_rgba(0,0,0,0.5)] relative z-10"
             priority
             style={{
