@@ -198,22 +198,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* CENTER — Foto (True Transparent PNG) */}
-        <div className="relative flex items-end justify-center lg:flex-1 min-h-screen animate-fade-up z-10 pointer-events-none overflow-visible" style={{ animationDelay: '0.5s' }}>
-          {/* Glow biru di bawah */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-56 bg-blue-600/25 rounded-full filter blur-3xl z-0"></div>
-          
+        {/* CENTER — Foto (Absolute Hero, like reference) */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 animate-fade-up" style={{ animationDelay: '0.5s' }}>
+          {/* Glow biru di bawah foto */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-64 bg-blue-600/25 rounded-full filter blur-3xl z-0"></div>
+
           {/* Foto container */}
-          <div className="relative z-10 w-full h-full flex items-end justify-center" style={{
-            WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
-            maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)'
+          <div className="relative z-10 h-full flex items-center justify-center" style={{
+            WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
           }}>
             <Image
               src="/foto.png"
               alt="Foto Khozin Sapzidan"
               width={700}
               height={900}
-              className="object-contain object-bottom w-full h-full max-h-[90vh]"
+              className="object-contain object-center h-full w-auto max-h-[90vh]"
               priority
             />
           </div>
