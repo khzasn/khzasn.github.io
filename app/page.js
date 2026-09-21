@@ -176,39 +176,38 @@ export default function Home() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className={`relative z-20 w-full min-h-screen flex flex-col lg:flex-row items-stretch pt-20 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+      <section className={`relative z-20 w-full min-h-screen flex flex-col lg:flex-row justify-between items-center px-8 lg:px-12 2xl:px-24 pt-32 pb-20 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         
-        {/* LEFT */}
-        <div className="flex-1 flex flex-col justify-center px-8 lg:pl-12 lg:pr-0 py-16 lg:py-0 lg:max-w-[65%] lg:-mr-32 relative z-30">
-          <div className="w-14 h-1 bg-[var(--accent)] mb-7 rounded-full shadow-[0_0_12px_rgba(0,102,255,0.7)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
-          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold mb-5 leading-[1.15] font-[family-name:var(--font-space-grotesk)] animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
+        {/* LEFT COLUMN */}
+        <div className="relative z-30 flex flex-col w-full lg:w-[45%] xl:w-[40%] mt-8 lg:mt-0">
+          <div className="w-20 h-1 bg-white mb-10 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.5)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
+          
+          <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold mb-6 leading-[1.05] font-[family-name:var(--font-space-grotesk)] text-white animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
             I'm Khozin Sapzidan, a student at Unja Information Systems.
           </h1>
-          <p className="text-gray-200 text-[15px] md:text-base leading-relaxed mb-10 max-w-[650px] animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.5s' }}>
-            <span className="font-semibold">Not a pro yet.</span> I still spend plenty of time just playing around and having fun, but I'm also keeping an eye on the future. Right now, I'm exploring different tech skills to see what's actually worth pursuing seriously.
+          
+          <p className="text-gray-300 text-[15px] md:text-lg leading-relaxed mb-12 max-w-[500px] animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.5s' }}>
+            <span className="font-semibold text-white">Not a pro yet.</span> I still spend plenty of time just playing around and having fun, but I'm also keeping an eye on the future. Right now, I'm exploring different tech skills to see what's actually worth pursuing seriously.
           </p>
+          
           <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
-            <a href="#portfolio" className="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-semibold text-sm rounded-full px-7 py-3.5 hover:bg-blue-600 transition-all hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,102,255,0.4)]">
-              Lihat Proyek
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </a>
-            <a href="#about" className="text-sm font-semibold text-white/70 hover:text-white transition-colors border border-white/20 rounded-full px-6 py-3.5 hover:border-white/40">
-              Tentang Saya
+            <a href="#portfolio" className="inline-flex items-center justify-center w-16 h-16 bg-[#0066ff] text-white rounded-full hover:bg-blue-600 transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,102,255,0.4)]">
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </a>
           </div>
         </div>
 
-        {/* CENTER — Foto (Fresh Implementation) */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] lg:max-w-[800px] h-[70vh] lg:h-[85vh] pointer-events-none z-10 flex items-end justify-center animate-fade-up" style={{ animationDelay: '0.5s' }}>
+        {/* CENTER PHOTO (ABSOLUTE) */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] lg:max-w-[700px] xl:max-w-[850px] h-[60vh] lg:h-[90vh] pointer-events-none z-20 flex items-end justify-center animate-fade-up" style={{ animationDelay: '0.5s' }}>
           {/* Glow effect di belakang foto */}
           <div className="absolute bottom-10 w-[70%] h-[50%] bg-blue-600/20 rounded-full filter blur-[80px] z-0"></div>
           
           <Image
             src="/foto.png"
             alt="Foto Khozin Sapzidan"
-            width={800}
-            height={1000}
-            className="object-contain object-bottom w-full h-full drop-shadow-2xl relative z-10"
+            width={850}
+            height={1100}
+            className="object-contain object-bottom w-full h-full drop-shadow-[0_0_30px_rgba(0,0,0,0.5)] relative z-10"
             priority
             style={{
               WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
@@ -217,8 +216,8 @@ export default function Home() {
           />
         </div>
 
-        {/* RIGHT */}
-        <div id="about" className="flex-1 flex flex-col justify-center gap-10 px-8 lg:px-12 py-16 lg:py-0 lg:max-w-[35%] scroll-mt-24 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+        {/* RIGHT COLUMN */}
+        <div id="about" className="relative z-30 flex flex-col w-full lg:w-[35%] xl:w-[25%] gap-12 mt-16 lg:mt-0 scroll-mt-24 animate-fade-up" style={{ animationDelay: '0.6s' }}>
           <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold w-fit">
             <span className="w-2 h-2 bg-green-400 rounded-full shadow-[0_0_8px_#4ade80] animate-pulse"></span>
             Available for projects
@@ -239,7 +238,7 @@ export default function Home() {
             },
           ].map((item) => (
             <div key={item.label} className="border-l-2 border-[var(--accent)]/40 pl-6">
-              <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-3 text-[var(--accent)]">{item.label}</h3>
+              <h3 className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-3 text-white">{item.label}</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.body}</p>
               <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="text-xs font-bold text-white/80 hover:text-[var(--accent)] transition-colors group inline-flex items-center gap-1">
                 {item.cta}
@@ -248,7 +247,7 @@ export default function Home() {
           ))}
 
           <div className="border-l-2 border-[var(--accent)]/40 pl-6">
-            <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-3 text-[var(--accent)]">Follow Me</h3>
+            <h3 className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-3 text-white">Follow Me</h3>
             <div className="flex gap-3">
               {[
                 { url: "https://github.com/khzasn", d: "M12 .5C5.73.5.5 5.74.5 12.02c0 5.02 3.29 9.27 7.86 10.77.57.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.8 1.19 1.83 1.19 3.09 0 4.44-2.7 5.42-5.27 5.7.42.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5Z" },
