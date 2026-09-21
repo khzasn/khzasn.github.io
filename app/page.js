@@ -198,25 +198,23 @@ export default function Home() {
           </div>
         </div>
 
-        {/* CENTER — Foto (Absolute Hero, like reference) */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 animate-fade-up" style={{ animationDelay: '0.5s' }}>
-          {/* Glow biru di bawah foto */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-64 bg-blue-600/25 rounded-full filter blur-3xl z-0"></div>
-
-          {/* Foto container */}
-          <div className="relative z-10 h-full flex items-center justify-center" style={{
-            WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-            maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
-          }}>
-            <Image
-              src="/foto.png"
-              alt="Foto Khozin Sapzidan"
-              width={700}
-              height={900}
-              className="object-contain object-center h-full w-auto max-h-[90vh]"
-              priority
-            />
-          </div>
+        {/* CENTER — Foto (Fresh Implementation) */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] lg:max-w-[800px] h-[70vh] lg:h-[85vh] pointer-events-none z-10 flex items-end justify-center animate-fade-up" style={{ animationDelay: '0.5s' }}>
+          {/* Glow effect di belakang foto */}
+          <div className="absolute bottom-10 w-[70%] h-[50%] bg-blue-600/20 rounded-full filter blur-[80px] z-0"></div>
+          
+          <Image
+            src="/foto.png"
+            alt="Foto Khozin Sapzidan"
+            width={800}
+            height={1000}
+            className="object-contain object-bottom w-full h-full drop-shadow-2xl relative z-10"
+            priority
+            style={{
+              WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+              maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
+            }}
+          />
         </div>
 
         {/* RIGHT */}
