@@ -197,6 +197,25 @@ export default function Home() {
           </div>
         </div>
 
+        {/* CENTER PHOTO (ABSOLUTE) */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] lg:max-w-[750px] xl:max-w-[850px] h-[55vh] lg:h-[85vh] pointer-events-none z-20 flex items-end justify-center animate-fade-up overflow-visible" style={{ animationDelay: '0.5s' }}>
+          {/* Glow effect di belakang foto */}
+          <div className="absolute bottom-10 w-[60%] h-[60%] bg-blue-600/15 rounded-full filter blur-[100px] z-0"></div>
+          
+          <Image
+            src="/foto.png"
+            alt="Foto Khozin"
+            width={900}
+            height={1100}
+            className="object-contain object-bottom w-full h-full drop-shadow-[0_0_40px_rgba(0,0,0,0.5)] relative z-10"
+            priority
+            style={{
+              WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+              maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
+            }}
+          />
+        </div>
+
 
 
         {/* RIGHT COLUMN */}
