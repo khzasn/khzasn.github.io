@@ -183,7 +183,7 @@ export default function Home() {
           <div className="w-16 h-1 bg-white mb-6 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.5)] animate-fade-up" style={{ animationDelay: '0.3s' }}></div>
           
           <h1 className="text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.3rem] 2xl:text-[3.5rem] font-bold mb-4 leading-[1.15] font-[family-name:var(--font-space-grotesk)] text-white animate-fade-up drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.4s' }}>
-            I'm Khozin Sapzidan, a student at Unja Information Systems.
+            I'm Khozin, a student at Unja Information Systems.
           </h1>
           
           <p className="text-gray-300 text-sm md:text-[15px] leading-relaxed mb-8 animate-fade-up drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]" style={{ animationDelay: '0.5s' }}>
